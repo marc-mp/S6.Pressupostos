@@ -36,22 +36,14 @@ export default function ListServices() {
         const { value, checked } = event.target
 
         if(checked){
-            setSelectedServices ([...selectedServices, parseInt(value)])
+            setSelectedServices ([...selectedServices, Number(value)]) // transformo a number porque event.target.value lo devuelve como string
         }else{
-            setSelectedServices (selectedServices.filter((e) => e !== value))
+            setSelectedServices (selectedServices.filter((e) => e !== Number(value)))
+
         }
     }
 
     console.log(selectedServices)
-
-
-    // function TotalPressu(selectedServices){
-
-    //     const totalpressupost = selectedServices.reduce((total, selected) => total + selected, 0)
-    //     console.log(totalpressupost)
-
-    // }
-
 
 
   

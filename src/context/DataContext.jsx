@@ -9,9 +9,7 @@ export const DataContext = React.createContext({})
 const DataContextProvider = ( {children} ) => {
 
 
-    //const [service, setService] = useState(0);
-    //const [totalPressupost, setTotalPressupost] = useState(0)
-    const [selectedServices, setSelectedServices ] = useState ([])
+    const [selectedServices, setSelectedServices] = useState ([])
     const [totalPressupost, setTotalPressupost] = useState(0)
 
     
