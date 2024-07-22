@@ -6,6 +6,8 @@ import DataContextProvider from './context/DataContext'
 import TituloCalculadora  from './components/TituloCalculadora'
 import ListServices from './components/ListServices'
 import TotalPressupost from './components/TotalPressupost'
+//import WebServiceSetting from './components/WebServiceSetting'
+
 
 
 

@@ -1,47 +1,60 @@
-// import CheckBoxService from './components/CheckBoxService'
-// import ServiceData from './components/ServiceData'
+//import { useState } from "react"
 import { useContext } from "react"
 import { DataContext } from "../context/DataContext"
-//import { useState } from "react"
+import WebServiceSetting from './WebServiceSetting'
+
 
 export default function ListServices() {
 
     const serviceData = [
         {
+            id: "1",
             title: "Seo",
             description: "Programació duna web responsive completa",
             price: 300
         },
         {
+            id: "2",
             title: "Ads",
             description: "Programació duna web responsive completa",
             price: 400
         },
         {
+            id: "3",
             title: "Web", 
             description: "Programació duna web responsive completa",
             price: 500
         }
     ]
     
-
-    //const [selectedServices, setSelectedServices ] = useState ([])
-
+    
     const context = useContext(DataContext) 
-    const {setSelectedServices, selectedServices } = context
+    const {setSelectedServices, selectedServices, showWebServiceSetting, setShowWebServiceSetting,} = context
 
-    function checkboxHandler(event){
+
+    function checkboxHandler(event) {
         //console.log(event.target.checked) // si checked true sino false 
         //console.log(event.target.value) // encontravos value que es el valor de service.
-        const { value, checked } = event.target
+        console.log(event.target)
+
+        const { value, checked, id } = event.target
 
         if(checked){
             setSelectedServices ([...selectedServices, Number(value)]) // transformo a number porque event.target.value lo devuelve como string
+            if (id === "3") {
+                setShowWebServiceSetting(true)
+            }
         }else{
             setSelectedServices (selectedServices.filter((e) => e !== Number(value)))
-
+            if (id === "3") {
+                setShowWebServiceSetting(false)
+            }
         }
+
+       
     }
+
+    
 
     console.log(selectedServices)
 
@@ -50,24 +63,27 @@ export default function ListServices() {
     return (
       <div>
         {serviceData.map((service, index) => (
-                  <div className="flex items-center justify-between h-32 mt-5 mx-48 p-10 rounded-xl shadow-xl" key={index}>
-                  <div className=" w-72 ">
-                          <h2 className="text-4xl font-bold mb-1">{service.title}</h2>
-                          <p className="font-semibold">{service.description}</p> 
-                  </div>
-                  <div className="flex justify-center text-5xl font-extrabold ">
-                      <h1>{service.price}€</h1>
-                  </div>
-                  <div className="flex justify-end  form-control">
-                      <label className="label cursor-pointer">
-                          <input type="checkbox"  className="checkbox checkbox-primary" id={`${index}`} value={service.price} onChange={checkboxHandler}/>
-                          <span className="label-text text-xl font-semibold"> Afegir</span>
-                      </label>
-                  </div>
-              </div>
-      
+            <div className="grid grid-cols-3 gap-4 content-center justify-between mt-5 mx-48 p-10 rounded-xl shadow-xl"  key={index}>
+                <div className=" w-72 ms-10 ">
+                        <h2 className="text-4xl font-bold mb-1">{service.title}</h2>
+                        <p className="font-semibold">{service.description}</p> 
+                </div>
+                <div className="flex justify-center self-center text-5xl font-extrabold ">
+                    <h1>{service.price}€</h1>
+                </div>
+                <div className="flex justify-end self-center form-control me-10">
+                    <label className="label cursor-pointer">
+                        <input type="checkbox"  className="checkbox checkbox-primary" id={service.id} value={service.price} onChange={checkboxHandler}/>
+                        <span className="label-text text-xl font-semibold"> Afegir </span>
+                    </label> 
+                </div>
+                <div className="grid grid-cols-subgrid gap-2 col-start-2 col-span-2">
+                        {showWebServiceSetting && service.id === "3" && <WebServiceSetting />}
+                </div>
+
+            </div>
         ))}
-      </div>
+    </div>
     )
   
 }
