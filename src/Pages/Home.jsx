@@ -6,7 +6,7 @@ import Menu from '../components/Menu';
 
 export default function Home(){
     
-    const [tituloHome, setTituloHome] = useState("Pressupostos Web");
+    const [tituloHome, setTituloHome] = useState("Presupuestos Web");
     
     return (
         <div>

@@ -37,11 +37,11 @@ export default function WebServiceSetting(){
                 <div className='ms-7 me-9'>
                     <p>Nombre de pagines</p>
                 </div>
-                <div className="flex items-center justify-center rounded-full w-5 h-5 text-gray-600 border-2 border-gray-500 me-1" >
+                <div className="flex items-center justify-center rounded-full w-5 h-5 text-gray-600 border-2 border-gray-200 me-1" >
                     <button onClick={disminuirPagines}>-</button>
                 </div>
-                <span className="border-2 border-gray-500 w-16 h-10 rounded-lg me-1 flex items-center justify-center font-bold"> {numPages} </span> 
-                <div className="flex items-center justify-center rounded-full w-5 h-5 text-gray-600 border-2 border-gray-500" >
+                <span className="border-2 border-gray-200 w-16 h-10 rounded-lg me-1 flex items-center justify-center font-bold"> {numPages} </span> 
+                <div className="flex items-center justify-center rounded-full w-5 h-5 text-gray-600 border-2 border-gray-200" >
                     <button  onClick={incrementarPagines}>+</button>
                 </div>
             </div>
@@ -49,11 +49,11 @@ export default function WebServiceSetting(){
                 <div className='me-9'>
                     <p>Nombre de llenguatges</p>
                 </div>
-                <div className="flex items-center justify-center rounded-full w-5 h-5 text-gray-600 border-2 border-gray-500 me-1" >
+                <div className="flex items-center justify-center rounded-full w-5 h-5 text-gray-600 border-2 border-gray-200 me-1" >
                     <button onClick={disminuirLlenguatges}>-</button>
                 </div>
-                <span className="border-2 border-gray-500 w-16 h-10 rounded-lg me-1 flex items-center justify-center font-bold"> {numLanguages} </span> 
-                <div className="flex items-center justify-center rounded-full w-5 h-5 text-gray-600 border-2 border-gray-500">
+                <span className="border-2 border-gray-200 w-16 h-10 rounded-lg me-1 flex items-center justify-center font-bold"> {numLanguages} </span> 
+                <div className="flex items-center justify-center rounded-full w-5 h-5 text-gray-600 border-2 border-gray-200">
                     <button  onClick={incrementarLlenguatges}>+</button>
                 </div>
             </div>

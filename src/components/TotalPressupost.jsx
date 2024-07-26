@@ -11,7 +11,7 @@ export default function TotalPressupost(){
 
     useEffect (() =>  {  // si se usa setSelectedServices quieres decir que hay cambios en selectServices por lo que se recalcula totalPressupost (usando setTotalPressupost)
         if(setSelectedServices){
-            setTotalPressupost (selectedServices.reduce((total, selected) => total + selected, 0) + (( numPages + numLanguages ) * 30))
+            setTotalPressupost (selectedServices.reduce((total, selected) => total + selected.price, 0) + (( numPages + numLanguages ) * 30))
         }
     },)
 

@@ -8,20 +8,43 @@ export const DataContext = React.createContext({})
 
 const DataContextProvider = ( {children} ) => {
 
-
+    const [serviceData, setServiceData] = useState ([  
+    {
+        id: "1",
+        title: "Seo",
+        description: "Programació duna web responsive completa",
+        price: 300
+    },
+    {
+        id: "2",
+        title: "Ads",
+        description: "Programació duna web responsive completa",
+        price: 400
+    },
+    {
+        id: "3",
+        title: "Web", 
+        description: "Programació duna web responsive completa",
+        price: 500
+    }])
+    
     const [selectedServices, setSelectedServices] = useState ([])
-    const [totalPressupost, setTotalPressupost] = useState(0)
-    const [numPages, setNumPages] = useState(0)
-    const [numLanguages, setNumLanguages] = useState(0)
-    const [showWebServiceSetting, setShowWebServiceSetting] = useState(false);
+    const [totalPressupost, setTotalPressupost] = useState (0)
+    const [numPages, setNumPages] = useState (0)
+    const [numLanguages, setNumLanguages] = useState (0)
+    const [showWebServiceSetting, setShowWebServiceSetting] = useState (false);
+    const [personalDataForm, setPersonalDataForm] = useState ({})
+    const [newPressupost, setNewpressupost] = useState ({})
+    const [listadoPressupoestos, setListadoPressupoestos] = useState ([])
 
 
 
 
-
-            // para usar provider dentro de DataContext.provider indicar value={{prop, prop,...}}
+    // para usar provider dentro de DataContext.provider indicar value={{prop, prop,...}}
     return (
-            <DataContext.Provider value= {{ selectedServices, 
+            <DataContext.Provider value= {{ serviceData,
+                                            setServiceData,
+                                            selectedServices, 
                                             setSelectedServices, 
                                             totalPressupost, 
                                             setTotalPressupost, 
@@ -30,9 +53,15 @@ const DataContextProvider = ( {children} ) => {
                                             numLanguages,
                                             setNumLanguages,
                                             showWebServiceSetting,
-                                            setShowWebServiceSetting
+                                            setShowWebServiceSetting,
+                                            personalDataForm,
+                                            setPersonalDataForm,
+                                            newPressupost,
+                                            setNewpressupost,
+                                            listadoPressupoestos, 
+                                            setListadoPressupoestos,
 
-                                        
+                                         
                                         }}>
 
                 {children} 

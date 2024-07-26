@@ -1,5 +1,4 @@
 // import { useContext } from 'react'
-//import CheckBoxService from './components/CheckBoxService'
 //import './App.css'
 // import { useState } from 'react'
 import DataContextProvider from '../context/DataContext'
@@ -7,6 +6,8 @@ import TituloCalculadora  from '../components/TituloCalculadora'
 import ListServices from '../components/ListServices'
 import TotalPressupost from '../components/TotalPressupost'
 import Menu from '../components/Menu'
+import FormPressupost from '../components/FormPressupost'
+import ListPressupostos from '../components/ListPressupostos'
 
 
 export default function App() {
@@ -18,6 +19,8 @@ export default function App() {
         <TituloCalculadora />
         <ListServices />
         <TotalPressupost/>
+        <FormPressupost />
+        <ListPressupostos />
 
 
       </div>
