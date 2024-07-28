@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext} from "react"
 import { DataContext } from "../context/DataContext"
 import { useForm } from "react-hook-form"
 
@@ -7,7 +7,6 @@ export default function FormPressupost() {
 
     const context = useContext(DataContext) 
     const {personalDataForm, setPersonalDataForm, newPressupost, listadoPressupoestos, setListadoPressupoestos, totalPressupost, selectedServices, numPages, numLanguages, setSelectedServices, setTotalPressupost, setNumPages, setNumLanguages, setShowWebServiceSetting,} = context
-
 
     const {register, handleSubmit, reset } = useForm()
 
@@ -26,20 +25,20 @@ export default function FormPressupost() {
             }
 
             setPersonalDataForm (dataForm)
-            // setNewpressupost (newPressupost)
             setListadoPressupoestos([...listadoPressupoestos, newPressupost])
+            
+            // limpiamos datos formulario y checkbox
+            setSelectedServices([])
+            setTotalPressupost(0)
+            setNumPages(0)
+            setNumLanguages(0)
+            setShowWebServiceSetting(false)
+            reset() 
 
-              
-              setSelectedServices([])
-              setTotalPressupost(0)
-              setNumPages(0)
-              setNumLanguages(0)
-              setShowWebServiceSetting(false)
-              reset() 
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+            checkboxes.forEach(checkbox => checkbox.checked = false)
         }
     }
-
-
 
     console.log(personalDataForm)
     console.log(newPressupost)
@@ -52,7 +51,7 @@ export default function FormPressupost() {
             </div>
             <form onSubmit={handleSubmit(generatePressupost)} className="flex self-center  justify-around form-control me-2" >
                 <input type="text" required className="border-2 border-gray-200 rounded-lg" placeholder=" Nom" {...register("nom")} />
-                <input type="number" required className="border-2 border-gray-200 rounded-lg" placeholder=" Telefon" {...register("telefon")}/>
+                <input type="tel"  required className="border-2 border-gray-200 rounded-lg" placeholder=" Telefon" {...register("telefon")}/>
                 <input type="email" required className="border-2 border-gray-200 rounded-lg" placeholder=" Email" {...register("email")}/>
                 <input type="submit" className='ms-5 flex items-center border-2 border-gray-200 text-white  bg-emerald-600 h-8 w-52 rounded-lg' value="Sol·licitar pressupost" />
             </form>

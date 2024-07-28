@@ -1,7 +1,7 @@
-import { useEffect} from "react"
 import { useContext } from "react"
 import { DataContext } from "../context/DataContext"
 import WebServiceSetting from './WebServiceSetting'
+import InfoModal from '../components/InfoModal'
 
 
 export default function ListServices() {
@@ -9,17 +9,8 @@ export default function ListServices() {
     const context = useContext(DataContext) 
     const {serviceData, setSelectedServices, selectedServices, showWebServiceSetting, setShowWebServiceSetting} = context
 
-     // Maneja la desmarcación de los checkboxes
-    //  useEffect(() => {
-    //     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-    //     checkboxes.forEach(checkbox => checkbox.checked = false);
-    // }, [selectedServices]);
 
     function checkboxHandler(event) {
-        //console.log(event.target.checked) // si checked true sino false 
-        //console.log(event.target.value) // encontravos value que es el valor de service.
-        //console.log(event.target)
-
         const { checked, id } = event.target
 
         if(checked){
@@ -38,7 +29,7 @@ export default function ListServices() {
     console.log(selectedServices)
 
     return (
-      <div>
+        <>
         {serviceData.map((service, index) => (
             <div className="grid grid-cols-3 gap-4 content-center justify-between mt-5 mx-48 p-10 rounded-xl shadow-xl" key={index}>
                 <div className=" w-72 ms-10 ">
@@ -53,13 +44,16 @@ export default function ListServices() {
                         <input type="checkbox"  className="checkbox checkbox-primary" id={service.id} value={service.price} onChange={checkboxHandler}/>
                         <span className="label-text text-xl font-semibold"> Afegir </span>
                     </label> 
+                     
                 </div>
                 <div className="grid grid-cols-subgrid gap-2 col-start-2 col-span-2">
-                        {showWebServiceSetting && service.id === "3" && <WebServiceSetting />}
+                        {showWebServiceSetting && service.id === "3" && <WebServiceSetting />}       
                 </div>
             </div>
         ))}
-    </div>
+        <InfoModal />  
+
+        </>
     )
 }
 

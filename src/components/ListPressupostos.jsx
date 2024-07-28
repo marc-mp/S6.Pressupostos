@@ -19,7 +19,7 @@ export default function ListPressupostos() {
                     <div key={index} className="grid grid-cols-3 gap-4 content-center items-center mt-5  p-10 rounded-xl shadow-xl">
                         {/* <h3 className="text-xl font-bold">{index + 1}</h3> */}
                         <div >
-                            <p className="text-4xl font-bold mb-2"> {presupuesto.personalData.nom} </p>
+                            <p className="text-3xl font-bold mb-2"> {presupuesto.personalData.nom} </p>
                             <p className="font-semibold text-gray-600 mb-2"> {presupuesto.personalData.email} </p>
                             <p className="font-semibold text-gray-600 mb-2"> {presupuesto.personalData.telefon} </p>
                         </div>

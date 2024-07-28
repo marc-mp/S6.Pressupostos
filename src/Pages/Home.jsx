@@ -51,10 +51,8 @@ export default function Home(){
                         </button>
                     </Link>
                     </nav>
-                    
                 </div>
             </div>
-            
         </div>
     )
 }

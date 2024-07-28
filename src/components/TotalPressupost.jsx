@@ -5,7 +5,6 @@ import { DataContext } from '../context/DataContext'
 
 export default function TotalPressupost(){
 
-
    const context = useContext( DataContext ) 
    const {totalPressupost, setTotalPressupost, selectedServices, setSelectedServices, numPages, numLanguages } = context
 
@@ -19,8 +18,6 @@ export default function TotalPressupost(){
     return (
         <div className='flex justify-end h-24 mt-5 mx-48 p-10 rounded-xl '>
             <h2 className="font-bold text-3xl">Preu pressupostat: { totalPressupost } € </h2>
-
         </div>
     )
-
 }

@@ -1,6 +1,4 @@
-// import { useContext } from 'react'
 //import './App.css'
-// import { useState } from 'react'
 import DataContextProvider from '../context/DataContext'
 import TituloCalculadora  from '../components/TituloCalculadora'
 import ListServices from '../components/ListServices'
@@ -10,21 +8,37 @@ import FormPressupost from '../components/FormPressupost'
 import ListPressupostos from '../components/ListPressupostos'
 
 
+import {
+  ChakraBaseProvider,
+  extendBaseTheme,
+  theme as chakraTheme,
+} from '@chakra-ui/react'
+
+const { Button } = chakraTheme.components
+
+const theme = extendBaseTheme({
+  components: {
+    Button,
+  },
+})
+
 export default function App() {
   
   return (
-    <DataContextProvider>
-      <div>
-        <Menu />
-        <TituloCalculadora />
-        <ListServices />
-        <TotalPressupost/>
-        <FormPressupost />
-        <ListPressupostos />
+      <DataContextProvider>
+        <ChakraBaseProvider theme={theme}>
+          <div>
+            <Menu />
+            <TituloCalculadora />
+            <ListServices />
+            <TotalPressupost/>
+            <FormPressupost />
+            <ListPressupostos />
+            
 
-
-      </div>
-    </DataContextProvider>
+          </div>
+          </ChakraBaseProvider>
+      </DataContextProvider>
   )
 }
 

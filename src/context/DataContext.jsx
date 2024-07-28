@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-//import { createContext } from "react"
-// import ListServices from './components/ListServices'
 
 
 export const DataContext = React.createContext({})
@@ -36,7 +34,8 @@ const DataContextProvider = ( {children} ) => {
     const [personalDataForm, setPersonalDataForm] = useState ({})
     const [newPressupost, setNewpressupost] = useState ({})
     const [listadoPressupoestos, setListadoPressupoestos] = useState ([])
-
+    const [modalOpen, setModalOpen] = useState(false)
+    const [modalData, setModalData] = useState({ title: "", text: "" })
 
 
 
@@ -60,7 +59,11 @@ const DataContextProvider = ( {children} ) => {
                                             setNewpressupost,
                                             listadoPressupoestos, 
                                             setListadoPressupoestos,
-
+                                            modalOpen, 
+                                            setModalOpen,
+                                            modalData, 
+                                            setModalData
+                                            
                                          
                                         }}>
 
