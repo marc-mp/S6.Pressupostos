@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import { DataContext } from "../context/DataContext"
-import { Modal,ModalContent, ModalHeader, ModalBody, ModalCloseButton } from '@chakra-ui/react';
+import { Modal,ModalContent, ModalHeader, ModalBody, ModalCloseButton } from '@chakra-ui/react'
 
   export default function InfoModal() {
-    const context = useContext(DataContext);
-    const { modalOpen, setModalOpen, modalData} = context
+    const context = useContext(DataContext)
+    const { modalOpen, setModalOpen, modalData } = context
 
     return (
       

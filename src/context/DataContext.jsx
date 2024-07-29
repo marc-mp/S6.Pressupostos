@@ -36,6 +36,8 @@ const DataContextProvider = ( {children} ) => {
     const [listadoPressupoestos, setListadoPressupoestos] = useState ([])
     const [modalOpen, setModalOpen] = useState(false)
     const [modalData, setModalData] = useState({ title: "", text: "" })
+    const [originalList, setOriginalList] = useState([]);
+
 
 
 
@@ -62,7 +64,8 @@ const DataContextProvider = ( {children} ) => {
                                             modalOpen, 
                                             setModalOpen,
                                             modalData, 
-                                            setModalData
+                                            setModalData,
+                                            originalList, setOriginalList
                                             
                                          
                                         }}>

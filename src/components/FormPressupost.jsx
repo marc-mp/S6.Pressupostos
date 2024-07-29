@@ -1,4 +1,4 @@
-import { useContext} from "react"
+import { useContext } from "react"
 import { DataContext } from "../context/DataContext"
 import { useForm } from "react-hook-form"
 
@@ -6,9 +6,9 @@ import { useForm } from "react-hook-form"
 export default function FormPressupost() {
 
     const context = useContext(DataContext) 
-    const {personalDataForm, setPersonalDataForm, newPressupost, listadoPressupoestos, setListadoPressupoestos, totalPressupost, selectedServices, numPages, numLanguages, setSelectedServices, setTotalPressupost, setNumPages, setNumLanguages, setShowWebServiceSetting,} = context
-
+    const {personalDataForm, setPersonalDataForm, newPressupost, listadoPressupoestos, setListadoPressupoestos, totalPressupost, selectedServices, numPages, numLanguages, setSelectedServices, setTotalPressupost, setNumPages, setNumLanguages, setShowWebServiceSetting, setOriginalList } = context
     const {register, handleSubmit, reset } = useForm()
+
 
     const generatePressupost = (dataForm) => {
         console.log(dataForm)
@@ -26,6 +26,8 @@ export default function FormPressupost() {
 
             setPersonalDataForm (dataForm)
             setListadoPressupoestos([...listadoPressupoestos, newPressupost])
+            setOriginalList([...listadoPressupoestos, newPressupost ])
+            
             
             // limpiamos datos formulario y checkbox
             setSelectedServices([])
@@ -53,7 +55,7 @@ export default function FormPressupost() {
                 <input type="text" required className="border-2 border-gray-200 rounded-lg" placeholder=" Nom" {...register("nom")} />
                 <input type="tel"  required className="border-2 border-gray-200 rounded-lg" placeholder=" Telefon" {...register("telefon")}/>
                 <input type="email" required className="border-2 border-gray-200 rounded-lg" placeholder=" Email" {...register("email")}/>
-                <input type="submit" className='ms-5 flex items-center border-2 border-gray-200 text-white  bg-emerald-600 h-8 w-52 rounded-lg' value="Sol·licitar pressupost" />
+                <input type="submit" className='ms-5 flex items-center border-2 border-gray-200 text-white bg-green-500 h-8 w-52 rounded-lg' value="Sol·licitar pressupost" />
             </form>
         </div>
     )
