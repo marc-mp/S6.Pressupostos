@@ -28,7 +28,6 @@ export default function FormPressupost() {
             setListadoPressupoestos([...listadoPressupoestos, newPressupost])
             setOriginalList([...listadoPressupoestos, newPressupost ])
             
-            
             // limpiamos datos formulario y checkbox
             setSelectedServices([])
             setTotalPressupost(0)
@@ -36,7 +35,6 @@ export default function FormPressupost() {
             setNumLanguages(0)
             setShowWebServiceSetting(false)
             reset() 
-
             const checkboxes = document.querySelectorAll('input[type="checkbox"]')
             checkboxes.forEach(checkbox => checkbox.checked = false)
         }
