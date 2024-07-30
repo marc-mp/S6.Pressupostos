@@ -40,6 +40,7 @@ export default function ListPressupostos() {
         setListadoPressupoestos(sortedList)
     }
 
+    
     const searchPressupost = (e) => {
         const palabraToSearch = e.target.value.toLowerCase()
         setSearchName(palabraToSearch)
@@ -54,10 +55,10 @@ export default function ListPressupostos() {
 
 
     return (
-        <div className="mt-10 mb-10 mx-40 p-10">
+        <div className="mt-10 mb-10 sm:mx-5 md-mx-28 lg:mx-36 xl:mx-40 p-10">
             <div>
-                <h2 className="flex content-start text-4xl font-bold mb-5">Pressupostos en curs:</h2>
-                <div className="sortButtons flex justify-end items-center text-2xl">
+                <h2 className="flex content-start text-3xl lg:text-4xl font-bold mb-5">Pressupostos en curs:</h2>
+                <div className="flex flex-wrap md:justify-end items-center sm:text-lg lg:text-2xl">
                     <input type="text" name="searchPressupost" className="ms-4  size-auto border-2" placeholder=" search..." value={searchName} onChange={searchPressupost} />
                     <button className="mx-4 font-semibold" onClick={reiniciarOrden}>Data</button>
                     <button className="mx-4 font-semibold" onClick={ordenarPorPrecio}>Import</button>
@@ -83,13 +84,13 @@ export default function ListPressupostos() {
             <div>
             {listadoPressupoestos.length > 0 ? (
                 listadoPressupoestos.map((presupuesto, index) => (
-                    <div key={index} className="grid grid-cols-3 gap-4 content-center items-center mt-5  p-10 rounded-xl shadow-xl">
-                        <div >
-                            <p className="text-3xl font-bold mb-2"> {presupuesto.personalData.nom} </p>
+                    <div key={index} className="flex flex-col md:grid md:grid-cols-3 md:gap-4 md:content-center md:items-center mt-5 mx-auto p-10 rounded-xl shadow-xl">
+                        <div>
+                            <p className=" sm:text-lg md:text-xl lg:text-3xl font-bold mb-2"> {presupuesto.personalData.nom} </p>
                             <p className="font-semibold text-gray-600 mb-2"> {presupuesto.personalData.email} </p>
                             <p className="font-semibold text-gray-600 mb-2"> {presupuesto.personalData.telefon} </p>
                         </div>
-                        <div className="font-bold">
+                        <div className="font-bold ">
                             <p className="font-extrabold">Serveis contractats:</p>
                             <ul>
                                 {presupuesto.services.map((service, i) => (
@@ -102,14 +103,14 @@ export default function ListPressupostos() {
                                 ))}
                             </ul>
                         </div>
-                        <div className="ms-36">
-                            <p className="ms-5 font-semibold text-gray-600 ">Total:</p>
-                            <p className="text-4xl font-bold ">{presupuesto.total} €</p>     
+                        <div className="md:ms-24 lg:ms-28 xl:ms-36">
+                            <p className="  font-semibold text-gray-600 ">Total:</p>
+                            <p className="md:text-lg lg:text-xl  xl:text-5xl font-bold ">{presupuesto.total} €</p>     
                         </div>    
                     </div>
                 ))
             ) : (
-              <p className="text-center text-2xl mt-5">No se han encontrado resultados</p>
+              <p className="text-center sm:text-sm md:text-sm lg:text-xl  mt-5">No se han encontrado resultados...</p>
             )}
             </div>
         </div>    

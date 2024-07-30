@@ -39,7 +39,7 @@ export default function WebServiceSetting(){
 
 
     return (
-        <div className="font-semibold ms-56">
+        <div className="font-semibold lg:ms-28 xl:ms-64">
             <div className='inline-flex w-96 items-center mb-1 '>
                 <button className="flex items-center justify-center rounded-full me-2 w-4 h-4 text-xs  border-2 border-black" id="modal1" onClick={() => selectModal("modal1")}>i</button>
                 <div className='ms-7 me-9'>

@@ -55,28 +55,27 @@ export default function ListServices() {
     return (
         <>
         
-        <div className="flex justify-center items-center my-4">
+        <div className="flex justify-center items-center">
             <span className="mr-3 font-semibold">Pagament mensual</span>
                 <label className="relative inline-flex items-center cursor-pointer">
                     <input type="checkbox" id="discountButton" className="sr-only peer" onChange={aplicarDescuentoAnual} />
                     <div className="w-11 h-6 bg-green-500 rounded-full peer peer-checked:bg-green-500 peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 transition-all duration-300"></div>
                     {!applyDiscount && <span className="absolute right-1  bg-white w-5 h-5 rounded-full "></span>}
                     {applyDiscount && <span className="absolute left-1  bg-white w-5 h-5 rounded-full "></span>}
-
                 </label>
             <span className="ml-3 font-semibold">Pagament anual</span>
         </div>
         {serviceData.map((service, index) => (
-            <div className="grid grid-cols-3 gap-4 content-center justify-between mt-5 mx-48 p-10 rounded-xl shadow-xl" key={index}>
-                <div className=" w-72 ms-10 ">
-                        <h2 className="text-4xl font-bold mb-1">{service.title}</h2>
+            <div className="flex-col justify-center flex-wrap text-center md:text-start md:grid lg:grid-cols-3 lg:gap-4 content-center md:justify-between mt-5 mx-5 md-mx-28 lg:mx-36 xl:mx-40 p-10 rounded-xl shadow-xl" key={index}>
+                <div className=" lg:ms-10 ">
+                        <h2 className=" text-3xl lg:text-4xl font-bold mb-1">{service.title}</h2>
                         <p className="font-semibold">{service.description}</p> 
                 </div>
-                <div className="flex-col ms-24 justify-center self-center text-5xl font-extrabold ">
+                <div className="flex-col justify-center lg:ms-24 self-center text-4xl  xl:text-5xl font-extrabold ">
                         {!applyDiscount && <span className="text-xl text-red-200">Ahorra un 20%</span>}
                       <h1>{service.price}€ </h1>
                 </div>
-                <div className="flex justify-end self-center form-control me-10">
+                <div className="flex justify-center md:justify-end self-center form-control md:me-10">
                     <label className="label cursor-pointer">
                         <input type="checkbox"  className="checkbox checkbox-primary" id={service.id} value={service.price} onChange={checkboxHandler}/>
                         <span className="label-text text-xl font-semibold"> Afegir </span>

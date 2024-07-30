@@ -40,8 +40,6 @@ const DataContextProvider = ( {children} ) => {
 
 
 
-
-    // para usar provider dentro de DataContext.provider indicar value={{prop, prop,...}}
     return (
             <DataContext.Provider value= {{ serviceData,
                                             setServiceData,
@@ -67,7 +65,6 @@ const DataContextProvider = ( {children} ) => {
                                             setModalData,
                                             originalList, setOriginalList
                                             
-                                         
                                         }}>
 
                 {children} 

@@ -45,16 +45,19 @@ export default function FormPressupost() {
     console.log(listadoPressupoestos)
 
     return (
-        <div className="mt-10  mb-10 mx-48 p-10 rounded-xl shadow-xl">
+        <div className="mt-10 mb-10 sm:mx-5 md-mx-28 lg:mx-36 xl:mx-40 p-10 rounded-xl shadow-xl">
             <div className="flex content-start text-3xl font-bold mb-5">
                 <h2>Demanar Pressupost</h2>
             </div>
-            <form onSubmit={handleSubmit(generatePressupost)} className="flex self-center  justify-around form-control me-2" >
-                <input type="text" required className="border-2 border-gray-200 rounded-lg" placeholder=" Nom" {...register("nom")} />
-                <input type="tel"  required className="border-2 border-gray-200 rounded-lg" placeholder=" Telefon" {...register("telefon")}/>
-                <input type="email" required className="border-2 border-gray-200 rounded-lg" placeholder=" Email" {...register("email")}/>
-                <input type="submit" className='ms-5 flex items-center border-2 border-gray-200 text-white bg-green-500 h-8 w-52 rounded-lg' value="Sol·licitar pressupost" />
+            <form onSubmit={handleSubmit(generatePressupost)} className="flex-col  lg:flex-row lg:mb-0 flex-wrap flex self-center justify-around form-control lg:me-2" >
+                <input type="text" required className="border-2 border-gray-200 rounded-lg my-1" placeholder=" Nom" {...register("nom")} />
+                <input type="tel"  required className="border-2 border-gray-200 rounded-lg my-1" placeholder=" Telefon" {...register("telefon")}/>
+                <input type="email" required className="border-2 border-gray-200 rounded-lg my-1" placeholder=" Email" {...register("email")}/>
+                <input type="submit" className='my-1 lg:ms-5 flex items-center border-2 border-gray-200 text-white bg-green-500 h-8 w-52 rounded-lg' value="Sol·licitar pressupost" />
             </form>
         </div>
     )
 }
+
+
+
