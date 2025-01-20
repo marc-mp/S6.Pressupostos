@@ -55,14 +55,6 @@ VITE_FIREBASE_APP_ID="your_app_id"
 
 3. Ensure Firestore is set up to store budgets.
 
-## 📊 Key Features
-
-- **Service Selection**: Users can choose from various options to configure their budget.
-- **Dynamic Calculations**: Prices update in real-time based on user selections.
-- **Budget Storage**: Budgets are saved in Firestore for future reference.
-- **Sorting and Search**: Users can filter and sort budgets for better management.
-
-
 ---
 
 👨‍💻 Developed by *Marc Morell*
